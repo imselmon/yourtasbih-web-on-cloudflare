@@ -36,6 +36,7 @@
           data: JSON.stringify({ name, email, password }),
           success: function(response) {
             alert('Sign up successful');
+            window.location.href = '/login.html'; // Redirect to the login page
           },
           error: function(xhr, status, error) {
             alert('Sign up failed');
