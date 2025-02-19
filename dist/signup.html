@@ -30,7 +30,7 @@
         const password = $('#password').val();
 
         $.ajax({
-          url: '/signupuser',
+          url: '/register',
           type: 'POST',
           contentType: 'application/json',
           data: JSON.stringify({ name, email, password }),
