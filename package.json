@@ -1,0 +1,12 @@
+{
+  "name": "yourtasbih-web",
+  "version": "0.0.0",
+  "devDependencies": {
+    "wrangler": "^3.109.2"
+  },
+  "private": true,
+  "scripts": {
+    "start": "wrangler pages dev dist",
+    "deploy": "wrangler pages deploy"
+  }
+}

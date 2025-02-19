@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+body > h1 {
+  text-align: center;
+  font-size: 35px;
+  color: var(--heading-text-color);
+
+  margin: 5vh;
+  margin-top: -10vh;
+}
+@media screen and (max-width: 1024px) {
+  body > h1 {
+    margin-top: -5vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  body > h1 {
+    margin-top: 0vh;
+  }
+}
+
+.dhikr-container {
+  margin: 0 auto 5vh auto;
+  width: 80vw;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min(70vw, 300px));
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+
+.dhikr-container .dikhr {
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+
+  font-weight: 900;
+  font-size: 30px;
+  text-wrap: nowrap;
+}
+
+.dhikr-container .dikhr:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+/* .dikhr {
+  width: 280px;
+  }
+  */

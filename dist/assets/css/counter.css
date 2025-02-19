@@ -1,0 +1,66 @@
+.tasbih-title {
+  margin-top: -5vh;
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .tasbih-title {
+    margin-top: 2.5vh;
+  }
+}
+
+#dhikrName {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+h2 {
+  margin: 15px;
+  font-size: 50px;
+  color: white;
+  text-align: center;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.button-group img:hover {
+  cursor: pointer;
+}
+
+.increment-btn {
+  height: 30vh;
+}
+.decrement-btn {
+  height: 5vh;
+  margin-top: -20px;
+}
+
+.actions {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-action {
+  padding: 10px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.btn-action img {
+  height: 20px;
+}
+.btn-action:hover {
+  cursor: pointer;
+}
+
+span {
+  color: #e4c167;
+}

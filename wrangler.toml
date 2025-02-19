@@ -1,0 +1,12 @@
+name = "yourtasbih-app"
+compatibility_date = "2025-02-19"
+pages_build_output_dir="dist"
+
+[[kv_namespaces]]
+binding = "USERS"
+id = "0563897d8af64beebc1ceeb719a42de3"
+preview_id = "0563897d8af64beebc1ceeb719a42de3"
+
+
+[vars]
+KV_USERS = "0563897d8af64beebc1ceeb719a42de3"

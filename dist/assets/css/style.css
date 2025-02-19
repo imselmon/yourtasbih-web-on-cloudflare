@@ -1,0 +1,396 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --dark-gradient: linear-gradient(
+    347deg,
+    rgba(46, 46, 46, 1) -25%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(67, 67, 67, 1) 125%
+  );
+  --gold-gradient: linear-gradient(216deg, #ffde6d 14%, #c58b41 84.79%);
+  --heading-text-color: #ffffff;
+  --secondary-text-color: #6f6f6f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--dark-gradient) no-repeat;
+  font-family: Poppins, sans-serif;
+  min-height: 100vh;
+  width: 100%;
+}
+
+nav {
+  padding: 2vw;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .logo {
+  padding: 0;
+  width: 50vw;
+  max-width: 250px;
+}
+nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+nav .nav-links-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+nav .nav-links-container img {
+  height: 25px;
+}
+nav .nav-links-container img:hover {
+  cursor: pointer;
+}
+nav .nav-links-container a + img {
+  height: 35px;
+}
+
+footer {
+  margin: 5vh;
+
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  color: var(--secondary-text-color);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: min(70vw, 300px);
+  height: 100vh;
+  background: var(--gold-gradient);
+
+  border-radius: 0 25px 25px 0;
+
+  transition: transform 1s ease-in-out;
+}
+.menu-open {
+  transform: translateX(0);
+}
+.menu-close {
+  transform: translateX(-101%);
+}
+
+.menu .logo-container {
+  border-bottom: 2px solid var(--heading-text-color);
+
+  padding: 20% 0 10% 0;
+  text-align: center;
+}
+.menu .logo-container img {
+  width: min(40%, 100px);
+}
+.menu .logo-container h1 {
+  font-size: 20px;
+}
+.menu ul {
+  margin: auto;
+  padding: 10%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.menu ul li {
+  list-style: none;
+}
+.menu ul li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  text-decoration: none;
+  color: black;
+}
+.menu ul li a img {
+  height: 20px;
+}
+
+/* CSS classes */
+
+/* dikhr gold-gradient-border gold-gradient-text these 3 are the classes for the dhikr selectors  */
+.gold-gradient-border {
+  position: relative;
+  background: transparent;
+  padding: 15px 30px;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.gold-gradient-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  background: var(--gold-gradient) border-box;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.gold-gradient-text {
+  color: #333; /* Fallback color */
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Components CSS */
+.target-count-popup {
+  margin: auto;
+  width: min(90vw, 400px);
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: var(--dark-gradient);
+  border-radius: 25px;
+}
+.target-count-popup div {
+  border-radius: 25px 25px 0 0;
+  padding: 20px;
+  background: var(--gold-gradient);
+  color: var(--heading-text-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.target-count-popup label {
+  font-weight: 700;
+}
+.target-count-popup input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+
+  width: 90%;
+
+  background: var(--dark-gradient);
+  color: var(--heading-text-color);
+}
+.target-count-popup button {
+  padding: 20px 0;
+  outline: none;
+  border: none;
+
+  width: 49%;
+}
+.target-count-popup button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.dhikr {
+  padding: 10px;
+  border-radius: 20px;
+}
+
+/* this is the history css part */
+
+main {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+#history-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.delete-btn {
+  font-size: 15px;
+  background: #e4c167;
+  color: rgb(14, 14, 14);
+  font-weight: 600;
+  padding: 8px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Empty state styles */
+#empty-image {
+  width: 150px;
+  margin: 40px auto;
+}
+
+#empty-text {
+  font-size: 1.5em;
+  color: #888;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Dhikr Item Styles */
+.dhikr-item {
+  width: min(90vw, 400px);
+  background-color: none;
+  border-radius: 12px;
+  border: 2px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-left: 6px solid #e4c167;
+  border-right: 0.5px solid #e4c167;
+  border-top: 0.5px solid #e4c167;
+  border-bottom: 0.5px solid #e4c167;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dhikr-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.dhikr-name {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #e4c167;
+  margin-bottom: 10px;
+}
+
+.dhikr-count,
+.dhikr-target {
+  font-size: 1em;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.dhikr-count {
+  font-weight: 600;
+}
+
+.dhikr-target {
+  font-weight: 500;
+  color: #a09e9e;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  main {
+    padding: 15px;
+  }
+
+  nav span {
+    font-size: 1.2em;
+  }
+
+  .dhikr-item {
+    padding: 15px;
+  }
+
+  .dhikr-name {
+    font-size: 1.1em;
+  }
+
+  .dhikr-count,
+  .dhikr-target {
+    font-size: 0.9em;
+  }
+}
+/* extra  */
+
+.home-button {
+  cursor: pointer;
+}
+
+.auth-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: var(--dark-gradient);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.auth-container h1 {
+  margin-bottom: 20px;
+  color: var(--heading-text-color);
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-container label {
+  font-weight: 700;
+  color: var(--heading-text-color);
+}
+
+.auth-container input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background: var(--gold-gradient);
+  color: var(--heading-text-color);
+}
+
+.auth-container button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background: var(--gold-gradient);
+  color: var(--heading-text-color);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  opacity: 0.8;
+}
+
+.auth-container p {
+  margin-top: 20px;
+  color: var(--secondary-text-color);
+}
+
+.auth-container a {
+  color: var(--gold-gradient);
+  text-decoration: none;
+  font-weight: 700;
+}

@@ -1,0 +1,23 @@
+span {
+  color: var(--heading-text-color);
+}
+
+nav {
+  font-size: 20px;
+}
+nav img:hover {
+  cursor: pointer;
+}
+
+main {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main span {
+  font-size: 25px;
+  font-weight: 700;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasbih Counter</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/counter.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  </head>
+  <body>
+    <nav>
+      <a href="/index.html">
+        <img
+          src="/assets/images/LogoHorizantal.png"
+          alt="YourTasbih.logo"
+          class="logo"
+        />
+      </a>
+
+      <h3 class="gold-gradient-text" id="tasbihTarget"></h3>
+    </nav>
+
+    <div class="tasbih-title">
+      <h1 id="dhikrName" class="gold-gradient-text gold-gradient-border">
+        ٱلْحَمْدُ لِلَّٰهِ
+      </h1>
+    </div>
+
+    <div class="counter">
+      <h2 id="count">00</h2>
+    </div>
+    <div class="button-group">
+      <img
+        src="../assets/images/counter/increment-btn.svg"
+        id="increment"
+        class="increment-btn"
+        alt="Add"
+      />
+      <img
+        src="../assets/images/counter/decrement-btn.png"
+        class="decrement-btn"
+        id="decrement"
+        alt="Subtract"
+      />
+    </div>
+    <div class="actions">
+      <span
+        id="reset"
+        class="btn-action gold-gradient-text gold-gradient-border"
+      >
+        <img src="../assets/images/counter/reset-icon.svg" />
+        Reset
+      </span>
+      <a
+        href="/history.html"
+        class="btn-action gold-gradient-text gold-gradient-border"
+      >
+        <img src="../assets/images/counter/save-icon.svg" /> Save
+      </a>
+    </div>
+
+    <footer class="footer">
+      <a href="/index.html" class="gold-gradient-text">YourTasbih.app</a>
+      build by team
+      <a href="/team.html" class="gold-gradient-text">Raah-e-Islam</a> with
+      <a href="/team.html" class="gold-gradient-text">Hajjkiraah</a>
+    </footer>
+
+    <script src="../assets/javascript/script.js"></script>
+    <script src="../assets/javascript/counter.js"></script>
+  </body>
+</html>
