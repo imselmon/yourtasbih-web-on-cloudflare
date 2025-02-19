@@ -1,48 +1,53 @@
 <!-- signup.html -->
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Sign Up - YourTasbih App</title>
-      <link rel="stylesheet" href="../assets/css/style.css" />
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    <body>
-    <div class="auth-container">
-      <h1>Sign Up</h1>
-      <form id="signupForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
-        <button type="submit">Sign Up</button>
-      </form>
-      <p>Already have an account? <a href="login.html">Login</a></p>
-    </div>
-    <script>
-      $('#signupForm').on('submit', function(e) {
-        e.preventDefault();
-        const name = $('#name').val();
-        const email = $('#email').val();
-        const password = $('#password').val();
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Sign Up - YourTasbih App</title>
+            <link rel="stylesheet" href="../assets/css/style.css" />
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          </head>
+          <body>
+          <div class="auth-container">
+            <h1>Sign Up</h1>
+            <form id="signupForm">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required />
+              <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="login.html">Login</a></p>
+          </div>
+          <script>
+            $('#signupForm').on('submit', function(e) {
+              e.preventDefault();
+              const name = $('#name').val();
+              const email = $('#email').val();
+              const password = $('#password').val();
 
-        $.ajax({
-          url: '/register',
-          type: 'POST',
-          contentType: 'application/json',
-          data: JSON.stringify({ name, email, password }),
-          success: function(response) {
-            alert('Sign up successful');
-            window.location.href = '/login.html'; // Redirect to the login page
-          },
-          error: function(xhr, status, error) {
-            alert('Sign up failed');
-          }
-        });
-      });
-    </script>
-    </body>
-    </html>
+              if (!name || !email || !password) {
+                alert('All fields are required.');
+                return;
+              }
+
+              $.ajax({
+                url: '/register',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ name, email, password }),
+                success: function(response) {
+                  alert('Sign up successful');
+                  window.location.href = '/login.html'; // Redirect to the login page
+                },
+                error: function(xhr, status, error) {
+                  alert('Sign up failed');
+                }
+              });
+            });
+          </script>
+          </body>
+          </html>
